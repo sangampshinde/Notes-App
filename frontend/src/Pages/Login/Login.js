@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link}from 'react-router-dom'
 import Navbar from '../../Component/Navbar/Navbar'
+import Passwordinput from '../../Component/Passwordinput/Passwordinput'
 
 function Login() {
   return (
@@ -11,6 +12,7 @@ function Login() {
         <form onSubmit={()=>{}}>
           <h4 className='text-2xl mb-7'>Login</h4>
           <input type="text" placeholder='Email' className='input-box'/>
+          <Passwordinput/>
           <button type='submit' className='btn-primary bg-teal-600'>Login</button>
           <p className='text-sm  text-center mt-4'>Not Registered Yet ?{" "}
             <Link to="/signup" className="font-medium text-cyan-400 underline">Create an Account</Link>
