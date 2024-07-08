@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
-import Passwordinput from '../../Components/PasswordInput/Passwordinput'
-import{Link}from "react-router-dom"
+import React, { useState } from 'react';
+import Navbar from '../../Components/Navbar/Navbar';
+import Passwordinput from '../../Components/PasswordInput/Passwordinput';
+import{Link}from "react-router-dom";
+import {validateEmail} from "../../utlis/helper.js";
 
 const Login = () => {
 
@@ -11,8 +12,21 @@ const Login = () => {
 
   const handleLogin=async (e) => {
     e.preventDefault();
-    
 
+    if(!validateEmail(email)){
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    if(!password){
+      setError('Please enter a password.');
+      return;
+    }
+
+    setError("");
+
+    // Login API call
+  
   };
 
 
@@ -29,9 +43,9 @@ const Login = () => {
           />
           <Passwordinput value={password}
           onChange={(e)=>setPassword(e.target.value)}
-
           />
-
+          {error && <p className='text-red-500 text-xs pb-1'>{error}</p>}
+  
           <button type='submit' className='btn-primary'>Login</button>
           <p className=' text-sm text-center mt-4'>Not Register yet ?{" "} 
             <Link to='/signup'className="font-medium text-primary underline">Create an Account</Link>
