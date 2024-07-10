@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddEditNotes = () => {
+
+
+
+
+
   return (
     <div>
         <div className='flex flex-col gap-2'>
@@ -17,6 +22,7 @@ const AddEditNotes = () => {
         </div>
         <div className='mt-3'>
             <label className='input-label'>TAGS</label>
+            <TagInput/>
         </div>
         <button className='btn-primary font-medium mt-5 p-3' onClick={()=>{}}>ADD</button>
     </div>
