@@ -13,6 +13,10 @@ function authenticateToken(req, res, next){
         if(err){
             return res.sendStatus(401);
         }
+        req.user = user;
+        next();
     });
 
 }
+
+module.exports = { authenticateToken }; 
