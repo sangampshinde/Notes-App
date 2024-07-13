@@ -9,7 +9,7 @@ const noteSchema = new Schema({
   tags:{type:[String],default:[]},
   isPinned: { type: Boolean, default:false},
   userId:{type:String, required:true},
- createdOn:{type:Date, required:new Date.now()}
+  createdOn: { type: Date, default: Date.now }
 });
 
 
